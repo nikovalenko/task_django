@@ -6,7 +6,6 @@ class Country(models.Model):
 
     country_title = models.CharField(max_length=250)
     country_info = models.TextField(max_length=1000)
-    # is_selected = models.BooleanField(default=False, unique=False)
 
     def get_absolute_url(self):
         return reverse('country_detail', kwargs={'pk': self.pk})
