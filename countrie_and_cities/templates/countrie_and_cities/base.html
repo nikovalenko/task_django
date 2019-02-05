@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Countries & cities{% endblock %}</title>
+    {% load staticfiles %}
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
+
+
+</head>
+<body class="black-skin">
+
+    <nav class="navbar navbar-dark indigo">
+    <!--Header-->
+    <div class="navbar-header container-fluid row">
+
+            <div align="left"><a class="navbar-brand " href="{% url 'index' %}">Countries & Cities</a></div>
+            {% if user.is_authenticated %}
+                <div class="container" align="right"><a class="navbar-brand" href="{% url 'logout_user' %}"> {{ user.get_username }} Logout?</a></div>
+            {% else %}
+                <div class="container" align="right"><a class="navbar-brand" href="{% url 'login_user' %}"> Guest. Login?</a></div>
+            {% endif %}
+
+    </div>
+
+</nav>
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

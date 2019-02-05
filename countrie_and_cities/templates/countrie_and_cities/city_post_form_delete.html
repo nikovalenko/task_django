@@ -1,0 +1,6 @@
+{% block city-delete %}
+<form class="form-horizontal btn-group-sm" action="{% url 'city-delete' city.id %}" method="post" >
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary "><i class="fas fa-eraser"></i></button>
+</form>
+{% endblock %}

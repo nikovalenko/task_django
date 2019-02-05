@@ -1,0 +1,57 @@
+{% block city-form %}
+<form class="form-horizontal" action="{% url 'city-add' country.id %}" method="post" >
+                                                    {% csrf_token %}
+
+
+                                <div class="navbar-header">
+                                    <button class="btn btn-primary navbar-toggle " type="button"  data-toggle="collapse" data-target="#addNavBar{{ country.id }}_add"
+                                    aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        + Add city <span class="icon-toggle-icon"></span>
+                                    </button>
+                                </div>
+
+
+                                <div class="collapse " id="addNavBar{{ country.id }}_add">
+                                    <form class="nav navbar-nav" action="{% url 'city-add' country.id %}" method="post">
+
+
+
+                                      <!-- Grid row -->
+                                      <div class="form-row">
+                                        <!-- Grid column -->
+                                        <div class="col-md-12">
+                                          <!-- Material input -->
+                                          <div class="md-form form-group">
+
+                                            <input type="text" name="country" class="form-control" id="Country" placeholder="Country" aria-label="Country" value="{{ country.id }}" hidden >
+                                          </div>
+                                        </div>
+                                        <!-- Grid column -->
+
+                                      </div>
+                                      <!-- Grid row -->
+
+                                      <!-- Grid row -->
+                                      <div class="row">
+                                        <!-- Grid column -->
+                                        <div class="col-md-12">
+                                          <!-- Material input -->
+                                          <div class="md-form form-group">
+                                            <input type="text" name="city_title" id="City_title" class="form-control"  placeholder="City title" >
+                                          </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                          <!-- Material input -->
+                                          <div class="md-form form-group">
+                                              <textarea  name="city_info" id="City_info" class="form-control"  placeholder="Citi Info"></textarea>
+                                          </div>
+                                        </div>
+                                        <!-- Grid column -->
+                                      </div>
+                                      <!-- Grid row -->
+                                      <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                                    </form>
+                                </div>
+                            </form>
+{% endblock %}
