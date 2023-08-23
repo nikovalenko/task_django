@@ -1,3 +1,3 @@
 # task_django
-Test task that i did, but it's resulted cool.
-You'll find deploy recommendations in README.txt
+Simple Django-driven test task with countries list and their cities.
+You'll find deploy recommendations in deployment.txt
